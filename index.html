@@ -1,0 +1,126 @@
+<html>
+<head>
+	<title>New Year Wishes!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+	<style>
+	 body{
+	 	background: #333;  
+		font-family: 'Merriweather', serif;
+		}
+
+#snow{
+	background: none;
+	font-family: Androgyne;
+	background-image: url('http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png'), url('http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png'), url('http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png');
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index:1;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}	
+		.awesome {
+      font-family: futura;
+      color:#313131;
+      -webkit-animation:colorchange 10s infinite alternate;
+    }
+    @-webkit-keyframes colorchange {
+      0% { 
+        color: blue;
+      }
+      10% { 
+        color: #8e44ad;
+      }
+      20% { 
+        color: #1abc9c;
+      }
+      30% { 
+        color: #d35400;
+      }
+      40% { 
+        color: blue;
+      }
+      50% { 
+        color: #34495e;
+      }
+      60% { 
+        color: blue;
+      }
+      70% {
+        color: #2980b9;
+      }
+      80% {
+        color: #f1c40f;
+      }
+      90% {
+     
+        color: #2980b9;
+      }
+      100% {   
+        color: pink;
+      }
+    }
+	</style>
+</head>
+<body>
+	<div class = "container" style = "margin-top: 30px;">
+	<div style = "background:transparent !important" class="jumbotron">
+		<center>
+		<h1 class = "awesome"><b>Happy New Year</b></h1>
+		<h4 style = "color:#003399;">from</h4> 
+		<h1 id = "name" style = "color: #6666ff;"></h1>
+		<h4 style = "color:white; margin-top: 30px;"><b>"</b>Wishing you a Happy New Year with the hope that you will have many blessings in the year to come.<b>"</b></h4>
+		</center>
+	</div>
+</div>
+
+</body>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type = "text/javascript">
+
+	function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+var name = getParameterByName('name');
+console.log(name);
+name = capitalizeEachWord(name);
+function capitalizeEachWord(str) {
+    return str.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+document.getElementById("name").innerHTML = name;
+</script>
+
+</html>
