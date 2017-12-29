@@ -95,14 +95,12 @@
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 var name = getParameterByName('name');
-console.log(name);
-name = capitalizeEachWord(name);
-function capitalizeEachWord(str) {
-    return str.replace(/\w\S*/g, function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
+var fullname = "";
+var temp = name.split("_");
+for(var i = 0; i < temp.length; i++){
+  fullname+= temp[i].charAt(0).toUpperCase() + temp[i].substr(1).toLowerCase()+' ';
 }
-document.getElementById("name").innerHTML = name;
+document.getElementById("name").innerHTML = fullname;
 </script>
 
 </html>
